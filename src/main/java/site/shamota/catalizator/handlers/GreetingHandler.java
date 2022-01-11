@@ -1,18 +1,17 @@
 package site.shamota.catalizator.handlers;
 
+import site.shamota.catalizator.domain.Message;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import site.shamota.catalizator.domain.Message;
 
 import java.util.Map;
 
 @Component
 public class GreetingHandler {
-
     public Mono<ServerResponse> hello(ServerRequest request) {
         Long start = request.queryParam("start")
                 .map(Long::valueOf)
